@@ -1,0 +1,26 @@
+{
+  "presets": [
+    ["env", {
+      "modules": false,
+      "targets": [
+        "last 2 Chrome versions",
+        "last 2 Firefox versions",
+        "last 2 Safari versions",
+        "last 2 Edge versions",
+        "last 2 Opera versions",
+      ],
+    }],
+    "react",
+    "stage-0"
+  ],
+
+  "plugins": [
+    "transform-async-to-generator"
+  ],
+
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  }
+}
