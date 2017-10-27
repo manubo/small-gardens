@@ -22,7 +22,7 @@ firebase.initializeApp(config);
 app.use(bodyParser.urlencoded({extended: false}));
 
 
-app.post("/login", (req, res) => {
+app.post("/api/login", (req, res) => {
   email = req.body.username
   password = req.body.password
 
@@ -39,7 +39,7 @@ app.post("/login", (req, res) => {
 });
 
 
-app.post("/register", (req, res) => {
+app.post("/api/register", (req, res) => {
   email = req.body.username
   password = req.body.password
 
