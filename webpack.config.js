@@ -6,12 +6,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const isProductionBuild = false;
 
 module.exports = {
-  context: __dirname + "/app",
-  entry: "./index.js",
+  context: __dirname + '/app',
+  entry: './index.js',
   output: {
-    path: __dirname + "/public/",
+    path: __dirname + '/public/',
     publicPath: '/public/',
-    filename: "app.js"
+    filename: 'app.js',
   },
   module: {
     rules: [
@@ -32,12 +32,6 @@ module.exports = {
               loader: 'sass-loader',
               options: {
                 includePaths: [path.resolve(__dirname, 'app/styles')],
-              },
-            },
-            {
-              loader: 'sass-resources-loader',
-              options: {
-                resources: './app/styles/resources.scss',
               },
             },
           ],
@@ -74,7 +68,7 @@ module.exports = {
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new ExtractTextPlugin("styles.css"),
+    new ExtractTextPlugin('styles.css'),
     new HtmlWebpackPlugin({
       inject: true,
       title: 'Small Gardens',
@@ -92,10 +86,7 @@ module.exports = {
   ],
 
   resolve: {
-    modules: [
-      path.resolve(__dirname, 'web'),
-      'node_modules',
-    ],
+    modules: [path.resolve(__dirname, 'app'), 'node_modules'],
     extensions: ['.js'],
   },
 
