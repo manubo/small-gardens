@@ -22,19 +22,32 @@ firebase.initializeApp(config);
 app.use(bodyParser.urlencoded({extended: false}));
 
 
-
 app.post("/login", (req, res) => {
   email = req.body.username
   password = req.body.password
-
-  console.log(email)
-  console.log(password)
 
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then(() => {
-      console.log("foooobar");
+      console.log(`- a user has logged in: ${email}`);
+      res.sendStatus(200)
+    })
+    .catch((error) => {
+      res.sendStatus(403)
+    });
+});
+
+
+app.post("/register", (req, res) => {
+  email = req.body.username
+  password = req.body.password
+
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then(() => {
+      console.log(`- a new user has been created: ${email}`);
       res.sendStatus(200)
     })
     .catch((error) => {
