@@ -6,6 +6,7 @@ import GardenMap from 'components/GardenMap'
 function mapStateToProps(state) {
     const { gardens } = state;
     const { selectedGarden } = gardens;
+    console.log(selectedGarden);
     return {
         gardens: gardens.entities,
         selectedGarden

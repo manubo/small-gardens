@@ -9,7 +9,7 @@ const GardenMap = withScriptjs(withGoogleMap((props) =>
     }
   >
     {props.gardens.map(
-        ({ id, position }) => <Marker key={id} position={position} />
+        (garden) => <Marker clickable={true} onClick={() => console.log("Foo")} key={garden.id} position={garden.position} />
     )}
   </GoogleMap>
 ));
