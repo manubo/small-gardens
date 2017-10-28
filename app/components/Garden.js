@@ -1,4 +1,15 @@
 import React, { Component } from 'react';
+import {range} from 'ramda';
+
+const Leaves = props => {
+    return range(0, props.count).map((_item, index) => {
+        return <i key={index} className="fa fa-pagelines fa-2x"></i>
+    })
+};
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 export default class Garden extends Component {
   render() {
@@ -16,7 +27,7 @@ export default class Garden extends Component {
         <h2 className="text-muted">{garden.city}</h2>
         <div className="row">
           <div className="col-6">
-            <h3>&#9733;&#9733;&#9733;&#9733;&#9734;</h3>
+            <Leaves count={getRandomInt(1, 5)}/>
           </div>
           <div className="col-6 text-right">
             <h3>{garden.size}</h3>

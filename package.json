@@ -9,6 +9,7 @@
     "bootstrap": "^4.0.0-alpha.6",
     "file-loader": "^1.1.5",
     "firebase": "^4.6.0",
+    "font-awesome": "^4.7.0",
     "history": "^4.7.2",
     "prop-types": "^15.6.0",
     "query-string": "^5.0.1",
