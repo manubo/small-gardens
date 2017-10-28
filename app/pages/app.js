@@ -7,7 +7,7 @@ const App = ({ location }) => {
   const Component = (routesMap[type] && routesMap[type].component) || null;
 
   return (
-    <div id="app">
+    <div id="app" className="container">
       <Component />
     </div>
   );
