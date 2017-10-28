@@ -5,10 +5,13 @@
   "main": "app/index.js",
   "dependencies": {
     "axios": "^0.17.0",
+    "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0-alpha.6",
+    "firebase": "^4.6.0",
     "history": "^4.7.2",
     "prop-types": "^15.6.0",
     "query-string": "^5.0.1",
+    "nodemon": "^1.12.1",
     "ramda": "^0.25.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
