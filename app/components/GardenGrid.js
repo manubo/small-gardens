@@ -6,7 +6,7 @@ export default class Garden extends Component {
     return (
       <div className="row align-items-stretch">
         {gardens.map(garden => (
-          <div className="col-4" key={garden.id}>
+          <div className="col-4 mb-4" key={garden.id}>
             <div className="card" style={{ height: '100%' }}>
               <img
                 className="card-img-top"
