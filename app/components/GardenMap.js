@@ -3,12 +3,16 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 
 const GardenMap = withScriptjs(withGoogleMap((props) =>
   <GoogleMap
-    defaultZoom={17}
-    defaultCenter={{ lat: 47.372419, lng: 8.532109 }}
+    defaultZoom={13}
+    defaultCenter={
+      { lat: 47.372419, lng: 8.532109 }
+    }
   >
-    {props.isMarkerShown && <Marker position={{ lat: 47.372419, lng: 8.532109 }} />}
+    {props.gardens.map(
+        ({ id, position }) => <Marker key={id} position={position} />
+    )}
   </GoogleMap>
-))
+));
 
 GardenMap.defaultProps = {
   googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
@@ -16,6 +20,6 @@ GardenMap.defaultProps = {
   containerElement: <div style={{ height: `400px` }} />,
   mapElement: <div style={{ height: `100%` }} />,
   isMarkerShown: true
-}
+};
 
 export default GardenMap

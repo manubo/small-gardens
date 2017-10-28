@@ -4,11 +4,18 @@ import PropTypes from 'prop-types';
 import GardenMap from 'components/GardenMap'
 
 function mapStateToProps(state) {
-  return {};
+    const { gardens } = state;
+    const { selectedGarden } = gardens;
+    return {
+        gardens: gardens.entities,
+        selectedGarden
+    };
 }
 
 function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+      selectGarden: garden => dispatch(selectGarden(garden))
+  };
 }
 
 const Main = props => {
@@ -16,7 +23,7 @@ const Main = props => {
       <div className="row">
           <div className="col-12">
             <div className="main">
-                <GardenMap />
+                <GardenMap onGardenClick={props.selectGarden} gardens={props.gardens} />
             </div>
           </div>
       </div>

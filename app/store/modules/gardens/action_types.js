@@ -1,0 +1,1 @@
+export const SELECT_GARDEN = 'SELECT_GARDEN';
