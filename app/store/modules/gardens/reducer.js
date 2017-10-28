@@ -26,9 +26,20 @@ export default function gardens(state = initialState, action) {
   switch (action.type) {
     case SELECT_GARDEN: {
       const { garden: selectedGarden } = action.payload;
+      const { selectedGarden: currentSelectedGarden } = state;
+      const newSelectedGarden = do {
+        if (
+          currentSelectedGarden &&
+          currentSelectedGarden.id === selectedGarden.id
+        ) {
+          null;
+        } else {
+          selectedGarden;
+        }
+      };
       return {
         ...state,
-        selectedGarden,
+        selectedGarden: newSelectedGarden,
       };
     }
 
