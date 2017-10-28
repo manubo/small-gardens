@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import GardenMap from 'components/GardenMap'
 
 function mapStateToProps(state) {
   return {};
@@ -15,7 +16,7 @@ const Main = props => {
       <div className="row">
           <div className="col-12">
             <div className="main">
-                Welcome to Main
+                <GardenMap />
             </div>
           </div>
       </div>
