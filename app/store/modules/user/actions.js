@@ -12,7 +12,7 @@ export function signinUser() {
   return dispatch => {
     axios
       .post('/api/auth_token')
-      .then(response => signinUserSuccess(response))
-      .catch(response => signinUserFailure(response));
+      .then(response => dispatch(signinUserSuccess(response)))
+      .catch(response => dispatch(signinUserFailure(response)));
   }
 }

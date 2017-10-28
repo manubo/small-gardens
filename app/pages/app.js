@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 
 const App = ({ location }) => {
   const { type, routesMap } = location;
-  const Component = (routesMap[type] && routesMap[type].component) || null;
+  const Page = (routesMap[type] && routesMap[type].page) || null;
 
   return (
-    <div id="app" className="container">
-      <Component />
+    <div id="app" className="container-fluid">
+      <Page />
     </div>
   );
 };
