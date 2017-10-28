@@ -8,8 +8,8 @@ const routesMap = {
   },
   ROOT: {
     path: '/',
-    page: Main
-  }
+    page: Main,
+  },
 };
 
 export default routesMap;
