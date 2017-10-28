@@ -2,6 +2,7 @@
   "name": "small-gardens",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://manubo.github.io/small-gardens",
   "main": "app/index.js",
   "dependencies": {
     "axios": "^0.17.0",
@@ -10,10 +11,11 @@
     "file-loader": "^1.1.5",
     "firebase": "^4.6.0",
     "font-awesome": "^4.7.0",
+    "gh-pages": "^1.0.0",
     "history": "^4.7.2",
+    "nodemon": "^1.12.1",
     "prop-types": "^15.6.0",
     "query-string": "^5.0.1",
-    "nodemon": "^1.12.1",
     "ramda": "^0.25.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -47,7 +49,10 @@
   },
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --inline --watch-stdin --progress --color",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d public",
+    "build": "./node_modules/.bin/webpack -p"
   },
   "author": "",
   "license": "ISC"

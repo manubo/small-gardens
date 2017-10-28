@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 
 const App = ({ location }) => {
+  console.log(location);
   const { type, routesMap } = location;
   const Page = (routesMap[type] && routesMap[type].page) || null;
 

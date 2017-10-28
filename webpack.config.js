@@ -3,14 +3,13 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const isProductionBuild = false;
+const isProductionBuild = true;
 
 module.exports = {
   context: __dirname + '/app',
   entry: './index.js',
   output: {
     path: __dirname + '/public/',
-    publicPath: '/public/',
     filename: 'app.js',
   },
   module: {
@@ -100,5 +99,5 @@ module.exports = {
     },
   },
 
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
 };
