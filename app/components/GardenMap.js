@@ -35,7 +35,7 @@ class GardenMarker extends Component {
 const GardenMap = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
-      defaultZoom={13}
+      defaultZoom={12}
       defaultCenter={{ lat: 47.372419, lng: 8.532109 }}
     >
       {props.gardens.map(garden => (
