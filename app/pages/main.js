@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import GardenMap from 'components/GardenMap';
+import Garden from 'components/Garden';
 import { selectGarden } from 'store/modules/gardens/actions';
 
 function mapStateToProps(state) {
   const { gardens } = state;
   const { selectedGarden } = gardens;
-  console.log(selectedGarden);
   return {
     gardens: gardens.entities,
     selectedGarden,
@@ -23,13 +23,11 @@ function mapDispatchToProps(dispatch) {
 const Main = props => {
   return (
     <div className="row">
-      <div className="col-12">
-        <div className="main">
-          <GardenMap
-            onGardenClick={props.selectGarden}
-            gardens={props.gardens}
-          />
-        </div>
+      <div className="col-6">
+        {props.selectedGarden ? <Garden garden={props.selectedGarden} /> : null}
+      </div>
+      <div className="col-6">
+        <GardenMap onGardenClick={props.selectGarden} gardens={props.gardens} />
       </div>
     </div>
   );
