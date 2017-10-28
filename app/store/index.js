@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import { connectRoutes, redirect } from 'redux-first-router';
+import { connectRoutes } from 'redux-first-router';
 import thunkMiddleware from 'redux-thunk';
 import createHistory from 'history/createBrowserHistory';
 import queryString from 'query-string';

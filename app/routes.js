@@ -1,9 +1,14 @@
 import Login from 'pages/login';
+import Main from 'pages/main';
 
 const routesMap = {
   LOGIN: {
     path: '/login',
-    component: Login,
+    page: Login,
+  },
+  ROOT: {
+    path: '/',
+    page: Main,
   },
 };
 
